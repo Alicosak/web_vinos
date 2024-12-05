@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinoteca Elegante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vinoteca Elegante</h1>
+        <p>Descubre nuestra selección exclusiva de vinos</p>
+    </header>
+
+    <main>
+        <section class="wine-grid">
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/841839/ffffff?text=Malbec" alt="Malbec">
+                <h3>Malbec Reserva</h3>
+                <p>Notas de frutos rojos y chocolate</p>
+                <p class="price">$45.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-1')">-</span>
+                        <span class="quantity-display" id="quantity-1">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-1')">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/722F37/ffffff?text=Cabernet" alt="Cabernet">
+                <h3>Cabernet Sauvignon</h3>
+                <p>Intenso aroma a cassis y especias</p>
+                <p class="price">$52.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-2')">-</span>
+                        <span class="quantity-display" id="quantity-2">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-2')">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/E5D0D0/333333?text=Chardonnay" alt="Chardonnay">
+                <h3>Chardonnay Premium</h3>
+                <p>Notas de vainilla y frutas tropicales</p>
+                <p class="price">$38.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-3')">-</span>
+                        <span class="quantity-display" id="quantity-3">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-3')">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/B5495B/ffffff?text=Merlot" alt="Merlot">
+                <h3>Merlot Gran Reserva</h3>
+                <p>Suave y aterciopelado</p>
+                <p class="price">$48.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-4')">-</span>
+                        <span class="quantity-display" id="quantity-4">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-4')">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/F7E7CE/333333?text=Sauvignon" alt="Sauvignon">
+                <h3>Sauvignon Blanc</h3>
+                <p>Fresco y cítrico</p>
+                <p class="price">$35.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-5')">-</span>
+                        <span class="quantity-display" id="quantity-5">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-5')">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wine-card">
+                <img src="https://placehold.co/200x300/DB4D6D/ffffff?text=Rosé" alt="Rosé">
+                <h3>Rosé Special</h3>
+                <p>Delicado y frutal</p>
+                <p class="price">$32.00</p>
+                <div class="quantity-selector">
+                    <div class="quantity-control">
+                        <span class="quantity-btn minus" onclick="decrementQuantity('quantity-6')">-</span>
+                        <span class="quantity-display" id="quantity-6">0</span>
+                        <span class="quantity-btn plus" onclick="incrementQuantity('quantity-6')">+</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button id="floating-cart" class="floating-cart" onclick="showOrderForm()">
+            <span class="cart-text">Finalizar Compra</span>
+            <span class="cart-total">$0.00</span>
+        </button>
+
+        <a href="https://wa.me/960312595" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+            Contáctanos
+        </a>
+
+        <div id="orderForm" class="order-form hidden">
+            <h2>Complete su Pedido</h2>
+            <form id="wineForm" onsubmit="submitOrder(event)">
+                <input type="text" id="name" placeholder="Nombre completo" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="Teléfono" required>
+                <input type="text" id="address" placeholder="Dirección de entrega" required>
+                <div class="order-summary">
+                    <div id="order-items"></div>
+                    <p class="total">Total a pagar: $<span id="totalPrice">0.00</span></p>
+                </div>
+                <button type="submit" class="order-button">Ordenar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Vinoteca Elegante - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #841839;
+    --secondary-color: #722F37;
+    --accent-color: #DB4D6D;
+    --background-color: #FFF8F8;
+    --text-color: #333333;
+    --whatsapp-color: #25D366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.wine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .wine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .wine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wine-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wine-card:hover {
+    transform: translateY(-5px);
+}
+
+.wine-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.wine-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.quantity-selector {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+}
+
+.quantity-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.quantity-btn:hover {
+    color: var(--accent-color);
+}
+
+.quantity-display {
+    width: 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.floating-cart {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.floating-cart.visible {
+    display: flex;
+}
+
+.floating-cart:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+}
+
+.cart-text.hidden {
+    display: none;
+}
+
+.cart-total {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.whatsapp-button {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    background-color: var(--whatsapp-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.whatsapp-button i {
+    font-size: 1.2rem;
+}
+
+.order-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-form.hidden {
+    display: none;
+}
+
+.order-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.order-summary {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+}
+
+.order-summary .total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.order-button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 3rem;
+}
